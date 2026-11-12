@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f9e9f2">
+<title>A Little World for Poorva ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Caveat:wght@500;600;700&display=swap');
+:root{--pink:#f5cddd;--rose:#d985a9;--lav:#d9d2f4;--cream:#fff9f1;--ink:#5d4a60;--muted:#927f91;--green:#cbdcc9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:'DM Sans',sans-serif;background:#fff8f7;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;padding:70px 20px 90px;overflow:hidden;background:radial-gradient(ellipse at 15% 20%,#fff 0,transparent 35%),radial-gradient(ellipse at 85% 25%,#f3eaff 0,transparent 34%),linear-gradient(145deg,#fff3f5,#f6eafa 55%,#fff7e9)}
+.hero:before,.hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #fff9;border-radius:50%;pointer-events:none}
+.hero:before{top:-130px;left:-100px}.hero:after{bottom:-150px;right:-90px;width:340px;height:340px}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:.68rem;color:#a47b9d;font-weight:700}
+.hero h1{font:600 clamp(3.2rem,10vw,7.2rem)/.98 'Playfair Display',serif;margin:18px 0 15px;color:#765a7c}
+.hero h1 span{font-style:italic;color:#c77f9f}
+.subtitle{font:500 clamp(1.2rem,3vw,1.65rem) 'Caveat',cursive;color:#9b789b}
+.hero p{max-width:470px;margin:22px auto 28px;color:#8f7c8c;line-height:1.8}
+.primary{border:0;border-radius:999px;padding:14px 24px;background:linear-gradient(120deg,#d98eae,#ad9cdb);color:white;box-shadow:0 12px 28px #c78eae55;transition:.25s}
+.primary:hover{transform:translateY(-3px);box-shadow:0 16px 32px #c78eae66}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:.75rem;color:#a58da3;letter-spacing:.1em}
+.float{position:absolute;z-index:1;animation:drift 6s ease-in-out infinite;opacity:.85;user-select:none}
+.f1{top:13%;left:12%;font-size:2.2rem}.f2{top:23%;right:12%;font-size:1.8rem;animation-delay:-2s}.f3{bottom:19%;left:16%;font-size:1.6rem;animation-delay:-3s}.f4{bottom:20%;right:15%;font-size:2.3rem;animation-delay:-1s}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-17px) rotate(7deg)}}
+section{padding:86px 20px}
+.section-wrap{max-width:1000px;margin:auto}
+.section-kicker{text-align:center;text-transform:uppercase;letter-spacing:.2em;font-size:.68rem;color:#b184a1;font-weight:700}
+.section-title{text-align:center;font:600 clamp(2.2rem,6vw,3.8rem) 'Playfair Display',serif;color:#765a7c;margin:10px 0}
+.section-desc{text-align:center;max-width:570px;margin:0 auto 38px;color:#927f91;line-height:1.8}
+.intro{background:linear-gradient(180deg,#fff8f7,#fffdf9)}
+.note-card{max-width:720px;margin:auto;padding:34px 38px;background:#fffdf8;border:1px solid #f1dfeb;border-radius:8px 26px 8px 26px;box-shadow:0 18px 55px #a9849b18;position:relative;transform:rotate(-.5deg)}
+.note-card:before{content:"";position:absolute;inset:9px;border:1px dashed #e8cbdc;border-radius:5px 20px 5px 20px;pointer-events:none}
+.note-card p{position:relative;font:500 1.35rem/1.6 'Caveat',cursive;color:#806680;margin:0;text-align:center}
+.note-card .tiny{font:600 .72rem 'DM Sans',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#b58ca8;margin-bottom:12px}
+.scrapbook{background:linear-gradient(145deg,#f8effa,#fff6f1)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.memory{min-height:245px;padding:18px;background:#fffdfb;border:1px solid #f1e1e9;box-shadow:0 12px 30px #80608012;transform:rotate(var(--tilt));transition:.25s}
+.memory:hover{transform:rotate(0) translateY(-6px)}
+.memory-art{height:140px;border-radius:4px;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#fce0eb,#e7e1fb);cursor:pointer}
+.memory:nth-child(2) .memory-art{background:linear-gradient(135deg,#fce9d7,#f5d7e8)}
+.memory:nth-child(3) .memory-art{background:linear-gradient(135deg,#e2e9fa,#f4e1f0)}
+.memory-art input{position:absolute;inset:0;z-index:2;width:100%;height:100%;opacity:0;cursor:pointer}
+.memory-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.memory-art img:not([src]){display:none}
+.photo-prompt{padding:8px 12px;border:1px dashed #bda2b9;border-radius:999px;background:#fffdfbcc;color:#806680;font-size:.82rem}
+.memory-art:focus-within{outline:2px solid #ad8ca8;outline-offset:3px}
+.memory h3{font:600 1.4rem 'Playfair Display',serif;margin:14px 0 5px;color:#806680}
+.memory p{font-size:.85rem;line-height:1.55;color:#9b8998;margin:0}
+.bicker{background:#fffaf1}
+.bicker-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bicker-card{border-radius:20px;padding:24px;background:#fff;border:1px solid #f2e4d8;box-shadow:0 10px 28px #a78d7310}
+.bicker-card .emoji{font-size:1.8rem}
+.bicker-card h3{font:600 1.35rem 'Playfair Display',serif;margin:10px 0 7px}
+.bicker-card p{color:#968494;line-height:1.7;margin:0;font-size:.92rem}
+.letter{background:linear-gradient(150deg,#f7eefa,#fff4f5)}
+.envelope-wrap{text-align:center}
+.envelope{width:min(100%,520px);margin:30px auto 0;padding:34px 28px;background:#fffdf8;border-radius:12px 12px 26px 26px;border:1px solid #efdae8;box-shadow:0 20px 50px #97769b20;position:relative}
+.envelope:before{content:"♡";display:block;font-size:2.2rem;color:#d38cae;margin-bottom:8px}
+.letter-text{display:none;text-align:left;font:500 1.28rem/1.75 'Caveat',cursive;color:#806680;white-space:pre-line}
+.letter-text.show{display:block;animation:fade .6s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.cake-section{background:linear-gradient(180deg,#fff8f2,#f9eef7);text-align:center}
+.cake{font-size:7rem;filter:drop-shadow(0 12px 12px #a67b8b25);margin:8px 0}
+.candle-row{font-size:1.5rem;letter-spacing:.4rem;margin-bottom:10px}
+.final-line{font:italic 1.7rem 'Playfair Display',serif;color:#9c7296;margin:24px auto 0;max-width:650px}
+footer{text-align:center;padding:35px 20px 45px;background:#f5eaf4;color:#9a849a;font-size:.8rem}
+footer span{font:600 1.3rem 'Caveat',cursive;color:#a77d9e}
+.confetti{position:fixed;top:-20px;z-index:10;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+@media(max-width:700px){section{padding:68px 18px}.cards{grid-template-columns:1fr;max-width:420px;margin:auto}.memory{min-height:unset}.memory-art{height:125px}.bicker-grid{grid-template-columns:1fr}.note-card{padding:28px 22px}.f1{left:5%}.f2{right:5%}.f3{left:6%}.f4{right:6%}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <span class="float f1">✦</span><span class="float f2">♡</span><span class="float f3">❀</span><span class="float f4">✧</span>
+  <div class="hero-inner">
+    <div class="eyebrow">A little birthday surprise • made with love</div>
+    <h1>For <span>Poorva</span></h1>
+    <div class="subtitle">the girl who deserves her own little fairytale ♡</div>
+    <p>Today, the world gets to celebrate you. So here's a tiny corner of the internet that's just yours — full of flowers, magic, and a little bit of brotherly nonsense.</p>
+    <button class="primary" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">Come inside ✨</button>
+  </div>
+  <div class="scroll-hint">SCROLL TO EXPLORE ↓</div>
+</header>
+
+<section class="intro" id="intro">
+ <div class="section-wrap">
+  <div class="section-kicker">A note for the birthday girl</div>
+  <h2 class="section-title">A little reminder</h2>
+  <p class="section-desc">Ab itna jyada kya kar rahi aage badh.</p>
+  <div class="note-card">
+   <p class="tiny">dear bhootni ♡</p>
+   <p>May your days be soft, your dreams be big, your laughter be loud, and your world be full of people who make you feel loved. You deserve all the lovely things life has waiting for you. Keep being wonderfully, unapologetically you.</p>
+  </div>
+ </div>
+</section>
+
+<section class="scrapbook">
+ <div class="section-wrap">
+  <div class="section-kicker">little pieces of magic</div>
+  <h2 class="section-title">Your own little scrapbook</h2>
+  <p class="section-desc">Click a frame to add one of your favorite photos.</p>
+  <div class="cards">
+   <article class="memory" style="--tilt:-2deg"><label class="memory-art"><input type="file" accept="image/*" aria-label="Add a photo for Keep blooming"><img alt="Keep blooming"><span class="photo-prompt">＋ Add a photo</span></label><h3>Keep blooming</h3><p>In your own time, in your own way. Never feel you have to become anyone else.</p></article>
+   <article class="memory" style="--tilt:1.5deg"><label class="memory-art"><input type="file" accept="image/*" aria-label="Add a photo for Keep dreaming"><img alt="Keep dreaming"><span class="photo-prompt">＋ Add a photo</span></label><h3>Keep dreaming</h3><p>May you always have the courage to chase the things that make your eyes light up.</p></article>
+   <article class="memory" style="--tilt:-1deg"><label class="memory-art"><input type="file" accept="image/*" aria-label="Add a photo for Keep shining"><img alt="Keep shining"><span class="photo-prompt">＋ Add a photo</span></label><h3>Keep shining</h3><p>Even on the ordinary days. You make this little world brighter just by being in it.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="bicker">
+ <div class="section-wrap">
+  <div class="section-kicker">official sibling records</div>
+  <h2 class="section-title">A very serious announcement</h2>
+  <p class="section-desc">A few facts about our extremely peaceful and drama-free relationship.</p>
+  <div class="bicker-grid">
+   <div class="bicker-card"><div class="emoji">⚖️</div><h3>Our daily routine</h3><p>We may disagree about absolutely everything, including things that don't matter. I would still pick you as my sister. Don't let that go to your head.</p></div>
+   <div class="bicker-card"><div class="emoji">🛡️</div><h3>Your permanent backup</h3><p>I reserve the right to annoy you, tease you, and win arguments. But if the world is ever unkind to you, remember you've got me in your corner.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="letter">
+ <div class="section-wrap envelope-wrap">
+  <div class="section-kicker">from your favourite annoying person</div>
+  <h2 class="section-title">A letter for you</h2>
+  <p class="section-desc">This one's a little more serious. Tap when you're ready.</p>
+  <div class="envelope">
+   <button class="primary" id="openLetter" onclick="openNote()">Open your letter 💌</button>
+   <div class="letter-text" id="letterText">Poorva,
+
+I know I don't always say it, and most days we're probably busy arguing about something ridiculous. But I'm genuinely lucky to have you as my sister.
+
+I might not show it every day, but I care about you more than all our silly fights could ever change. I hope you get to do everything you've ever dreamed of. I hope you laugh a lot, find good people, stay brave, and never doubt how much you matter.
+
+Keep growing, keep being yourself, and please don't become too sensible — someone has to keep this family entertained.
+
+Happy Birthday, Poorva. I'll always be cheering for you (even if I pretend otherwise).
+
+With love,
+Your annoying older brother ♡</div>
+  </div>
+ </div>
+</section>
+
+<section class="cake-section">
+ <div class="section-wrap">
+  <div class="section-kicker">make a birthday wish</div>
+  <h2 class="section-title">One wish, just for you</h2>
+  <p class="section-desc">The cake is ready. Tap the button to make the candles disappear and send your wish into the universe.</p>
+  <div class="candle-row" id="candles">🕯️ 🕯️ 🕯️</div>
+  <div class="cake" id="cake">🎂</div>
+  <button class="primary" id="wishBtn" onclick="makeWish()">I've made my wish ✨</button>
+  <div class="final-line" id="finalLine"></div>
+ </div>
+</section>
+<footer>
+ <div>ho gaya mera jyada juth nahi bol sakta.</div>
+ <span>Happy Birthday theek hai ♡</span>
+</footer>
+<script>
+document.querySelectorAll('.memory-art input[type="file"]').forEach(input=>{
+ input.addEventListener('change',()=>{
+  const file=input.files[0];
+  if(!file)return;
+  const frame=input.closest('.memory-art');
+  const image=frame.querySelector('img');
+  if(image.dataset.previewUrl)URL.revokeObjectURL(image.dataset.previewUrl);
+  image.dataset.previewUrl=URL.createObjectURL(file);
+  image.src=image.dataset.previewUrl;
+  frame.querySelector('.photo-prompt').hidden=true;
+ });
+});
+function openNote(){
+ const letter=document.getElementById('letterText');
+ letter.classList.add('show');
+ document.getElementById('openLetter').style.display='none';
+}
+function makeWish(){
+ document.getElementById('candles').textContent='✨  ✨  ✨';
+ document.getElementById('wishBtn').textContent='Wish sent into the universe 💗';
+ document.getElementById('wishBtn').disabled=true;
+ document.getElementById('finalLine').textContent='May this year be as lovely as you are, Poorva.';
+ for(let i=0;i<42;i++){
+  const bit=document.createElement('div');
+  bit.className='confetti';
+  bit.textContent=['✦','♡','✿','✧','⋆'][Math.floor(Math.random()*5)];
+  bit.style.left=Math.random()*100+'vw';
+  bit.style.color=['#d98eae','#a99bd7','#e8bd83','#a9c9ad'][Math.floor(Math.random()*4)];
+  bit.style.fontSize=(12+Math.random()*18)+'px';
+  bit.style.animationDuration=(3+Math.random()*3)+'s';
+  document.body.appendChild(bit);
+  setTimeout(()=>bit.remove(),6500);
+ }
+}
+</script>
+</body>
+</html>
