@@ -41,14 +41,10 @@ section{padding:86px 20px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .memory{min-height:245px;padding:18px;background:#fffdfb;border:1px solid #f1e1e9;box-shadow:0 12px 30px #80608012;transform:rotate(var(--tilt));transition:.25s}
 .memory:hover{transform:rotate(0) translateY(-6px)}
-.memory-art{height:140px;border-radius:4px;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#fce0eb,#e7e1fb);cursor:pointer}
+.memory-art{height:140px;border-radius:4px;position:relative;overflow:hidden;background:linear-gradient(135deg,#fce0eb,#e7e1fb)}
 .memory:nth-child(2) .memory-art{background:linear-gradient(135deg,#fce9d7,#f5d7e8)}
 .memory:nth-child(3) .memory-art{background:linear-gradient(135deg,#e2e9fa,#f4e1f0)}
-.memory-art input{position:absolute;inset:0;z-index:2;width:100%;height:100%;opacity:0;cursor:pointer}
 .memory-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.memory-art img:not([src]){display:none}
-.photo-prompt{padding:8px 12px;border:1px dashed #bda2b9;border-radius:999px;background:#fffdfbcc;color:#806680;font-size:.82rem}
-.memory-art:focus-within{outline:2px solid #ad8ca8;outline-offset:3px}
 .memory h3{font:600 1.4rem 'Playfair Display',serif;margin:14px 0 5px;color:#806680}
 .memory p{font-size:.85rem;line-height:1.55;color:#9b8998;margin:0}
 .bicker{background:#fffaf1}
@@ -80,8 +76,8 @@ footer span{font:600 1.3rem 'Caveat',cursive;color:#a77d9e}
   <span class="float f1">✦</span><span class="float f2">♡</span><span class="float f3">❀</span><span class="float f4">✧</span>
   <div class="hero-inner">
     <div class="eyebrow">A little birthday surprise • made with love</div>
-    <h1>For <span>Poori</span></h1>
-    <div class="subtitle">the girl who deserves her own little fairytale ♡</div>
+    <h1>For <span>Poorva</span></h1>
+    <div class="subtitle">the girl who deserves her own little fairytale(juth bollo fir aur juth bolo) ♡</div>
     <p>Today, the world gets to celebrate you. So here's a tiny corner of the internet that's just yours — full of flowers, magic, and a little bit of brotherly nonsense.</p>
     <button class="primary" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">Come inside ✨</button>
   </div>
@@ -95,55 +91,54 @@ footer span{font:600 1.3rem 'Caveat',cursive;color:#a77d9e}
   <p class="section-desc">Ab itna jyada kya kar rahi aage badh.</p>
   <div class="note-card">
    <p class="tiny">dear bhootni ♡</p>
-   <p>May your days be soft, your dreams be big, your laughter be loud, and your world be full of people who make you feel loved. You deserve all the lovely things life has waiting for you. Keep being wonderfully, unapologetically you.</p>
+   <p>May your days be soft, your dreams be big, your laughter be loud, and your world be full of people who make you feel loved. You deserve all the lovely things life has waiting for you. Keep being wonderfully, unapologetically you (ignore this).</p>
   </div>
  </div>
 </section>
 
 <section class="scrapbook">
  <div class="section-wrap">
-  <div class="section-kicker">little pieces of magic</div>
+  <div class="section-kicker">Dekh kitni mehnat ki maine</div>
   <h2 class="section-title">Your own little scrapbook</h2>
-  <p class="section-desc">Click a frame to add one of your favorite photos.</p>
+  <p class="section-desc">kuch toh banaya hai.</p>
   <div class="cards">
-   <article class="memory" style="--tilt:-2deg"><label class="memory-art"><input type="file" accept="images/bloom" aria-label="Add a photo for Keep blooming"><img alt="Keep blooming"><span class="photo-prompt">＋ Add a photo</span></label><h3>Keep blooming</h3><p>In your own time, in your own way. Never feel you have to become anyone else.</p></article>
-   <article class="memory" style="--tilt:1.5deg"><label class="memory-art"><input type="file" accept="images/dream" aria-label="Add a photo for Keep dreaming"><img alt="Keep dreaming"><span class="photo-prompt">＋ Add a photo</span></label><h3>Keep dreaming</h3><p>May you always have the courage to chase the things that make your eyes light up.</p></article>
-   <article class="memory" style="--tilt:-1deg"><label class="memory-art"><input type="file" accept="images/shine" aria-label="Add a photo for Keep shining"><img alt="Keep shining"><span class="photo-prompt">＋ Add a photo</span></label><h3>Keep shining</h3><p>Even on the ordinary days. You make this little world brighter just by being in it.</p></article>
+   <article class="memory" style="--tilt:-2deg"><div class="memory-art"><img src="images/bloom.jpg" alt="A favorite photo of Poorva"></div><h3>Keep blooming</h3><p>In your own time, in your own way. Never feel you have to become anyone else.</p></article>
+   <article class="memory" style="--tilt:1.5deg"><div class="memory-art"><img src="images/dream.jpg" alt="A favorite photo of Poorva"></div><h3>Keep dreaming</h3><p>May you always have the courage to chase the things that make your eyes light up.</p></article>
+   <article class="memory" style="--tilt:-1deg"><div class="memory-art"><img src="images/shine.jpg" alt="A favorite photo of Poorva"></div><h3>Keep shining</h3><p>Even on the ordinary days. You make this little world brighter just by being in it.</p></article>
   </div>
  </div>
 </section>
 
 <section class="bicker">
  <div class="section-wrap">
-  <div class="section-kicker">official sibling records</div>
-  <h2 class="section-title">A very serious announcement</h2>
-  <p class="section-desc">A few facts about our extremely peaceful and drama-free relationship.</p>
+  <div class="section-kicker">janam kundali</div>
+  <h2 class="section-title">announcement</h2>
+  <p class="section-desc">a few things for ladaku viman.</p>
   <div class="bicker-grid">
-   <div class="bicker-card"><div class="emoji">⚖️</div><h3>Our daily routine</h3><p>We may disagree about absolutely everything, including things that don't matter. I would still pick you as my sister. Don't let that go to your head.</p></div>
-   <div class="bicker-card"><div class="emoji">🛡️</div><h3>Your permanent backup</h3><p>I reserve the right to annoy you, tease you, and win arguments. But if the world is ever unkind to you, remember you've got me in your corner.</p></div>
+   <div class="bicker-card"><div class="emoji">⚖️</div><h3>Daily routine</h3><p>Mtlb normaly apne ladte hai but mtlb itni bhi buri nahi hai tu theek hai kaam chal jaata aur mai toh mahan houn hi par better bhai banega mai bhi.</p></div>
+   <div class="bicker-card"><div class="emoji">🛡️</div><h3>Protection act</h3><p>dekh siple baat koi bhi problem ho merese share kar theek hai apan dekhlenge saari problems ko bas apne dance ke liye audio edit karwane mat lana.</p></div>
   </div>
  </div>
 </section>
 
 <section class="letter">
  <div class="section-wrap envelope-wrap">
-  <div class="section-kicker">from your favourite annoying person</div>
-  <h2 class="section-title">A letter for you</h2>
-  <p class="section-desc">This one's a little more serious. Tap when you're ready.</p>
+  <div class="section-kicker">bhagwan ka aashirwad</div>
+  <h2 class="section-title">Ek patra hamari aur se</h2>
+  <p class="section-desc">aayiye patra ko kholiye.</p>
   <div class="envelope">
    <button class="primary" id="openLetter" onclick="openNote()">Open your letter 💌</button>
-   <div class="letter-text" id="letterText">Poorva,
+   <div class="letter-text" id="letterText">pm,
 
-I know I don't always say it, and most days we're probably busy arguing about something ridiculous. But I'm genuinely lucky to have you as my sister.
+Aur kya haal behen aagaye doston ke birthday wishes ye le fir meri taraf bhi happy birthday hai.
 
-I might not show it every day, but I care about you more than all our silly fights could ever change. I hope you get to do everything you've ever dreamed of. I hope you laugh a lot, find good people, stay brave, and never doubt how much you matter.
+merko ye jyada nahi pata kya likhna hai toh bas haan enjoy every single day of your life theek hai sirf aaj hi nahi aur haan jaise jaise badi ho rahi hai na,
+vaise mature hone ki jarurat nahi hai uske liye mai hun (afcourse i am more mature then you) life enjoy kar masti kar aur kya bas ho gaya ab kya essay thori likhunga.
 
-Keep growing, keep being yourself, and please don't become too sensible — someone has to keep this family entertained.
-
-Happy Birthday, Poorva. I'll always be cheering for you (even if I pretend otherwise).
+baki Happy birthday hai firse.
 
 With love,
-Your annoying older brother ♡</div>
+Bhagwan ♡</div>
   </div>
  </div>
 </section>
@@ -152,7 +147,7 @@ Your annoying older brother ♡</div>
  <div class="section-wrap">
   <div class="section-kicker">make a birthday wish</div>
   <h2 class="section-title">One wish, just for you</h2>
-  <p class="section-desc">The cake is ready. Tap the button to make the candles disappear and send your wish into the universe.</p>
+  <p class="section-desc">cake tayar hai phook maar aur bhuja de candels aur maang le ek wish.</p>
   <div class="candle-row" id="candles">🕯️ 🕯️ 🕯️</div>
   <div class="cake" id="cake">🎂</div>
   <button class="primary" id="wishBtn" onclick="makeWish()">I've made my wish ✨</button>
@@ -164,18 +159,6 @@ Your annoying older brother ♡</div>
  <span>Happy Birthday theek hai ♡</span>
 </footer>
 <script>
-document.querySelectorAll('.memory-art input[type="file"]').forEach(input=>{
- input.addEventListener('change',()=>{
-  const file=input.files[0];
-  if(!file)return;
-  const frame=input.closest('.memory-art');
-  const image=frame.querySelector('img');
-  if(image.dataset.previewUrl)URL.revokeObjectURL(image.dataset.previewUrl);
-  image.dataset.previewUrl=URL.createObjectURL(file);
-  image.src=image.dataset.previewUrl;
-  frame.querySelector('.photo-prompt').hidden=true;
- });
-});
 function openNote(){
  const letter=document.getElementById('letterText');
  letter.classList.add('show');
@@ -185,7 +168,7 @@ function makeWish(){
  document.getElementById('candles').textContent='✨  ✨  ✨';
  document.getElementById('wishBtn').textContent='Wish sent into the universe 💗';
  document.getElementById('wishBtn').disabled=true;
- document.getElementById('finalLine').textContent='May this year be as lovely as you are, Poorva.';
+ document.getElementById('finalLine').textContent='chal ab ho gaya khatam mere 600 rupee dediyo.';
  for(let i=0;i<42;i++){
   const bit=document.createElement('div');
   bit.className='confetti';
